@@ -1,40 +1,26 @@
-// import { LASTFM_API } from '../../config';
-// import axios from 'axios';
-// import dotenv from 'dotenv';
-// 
-// const ARTIST_INFO = 'method=artist.getinfo';
-// dotenv.config();
-// 
-// const doRequest = async (url) => {
-//     return await axios.get(`${LASTFM_API}/${url}&api_key=${process.env.API_KEY}&format=json`);
-// };
-// 
-// export const infoArtist = async (term) => {
-//     return await doRequest(`?${ARTIST_INFO}&artist=${term}`);
-// };
-
-
-
-import { LASTFM_API } from '../../config/index.js';
+import { BASE_URL } from '../../config/index.js';
 import axios from 'axios';
 import dotenv from 'dotenv';
 
-const ARTIST_INFO = 'method=artist.getinfo';
+const ARTIST_INFO = 'artist';
+
+const options = { "User-Agent": "musicbrainz-api/1.0.0 ( zerovarius@gmail.com )" };
+
 
 dotenv.config();
 
-const doRequest = async (url) => {
+const doRequest = async (mbid) => {
 
-    const fullurl = `${LASTFM_API}/?${ARTIST_INFO}${url}&api_key=${process.env.API_KEY}&format=json`;
+    const fullurl = `${BASE_URL}/${ARTIST_INFO}/${mbid}?inc=url-rels+tags+genres+annotation&fmt=json`;
 
-    //console.log('full url is', fullurl);
+    console.log('full url is', fullurl);
 
-    return await axios.get(fullurl);
+    return await axios.get(fullurl, options);
 
 };
 
 export const infoArtist = async (term) => {
 
-    return await doRequest(`&artist=${term}`);
+    return await doRequest(`${term}`);
 
 };

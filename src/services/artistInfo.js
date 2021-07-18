@@ -5,7 +5,7 @@ export const artistInfo = async (req, res, next) => {
     try {
         const { query } = req;
         
-        const { data } = await infoArtist(query.artist);
+        const { data } = await infoArtist(query.mbid);
         
         const response = data;
 

@@ -1,1 +1,1 @@
-export const BASE_URL = 'http://ws.audioscrobbler.com/2.0';
+export const BASE_URL = 'https://musicbrainz.org/ws/2';
