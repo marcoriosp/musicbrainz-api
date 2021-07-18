@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { artistInfo } from '../services/artistInfo.js';
+import { artist } from '../services/artist.js';
 
 const routes = new Router();
 
-routes.get('/artist', artistInfo);
+routes.get('/artist', artist);
 
 export default routes;

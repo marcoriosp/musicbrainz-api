@@ -1,11 +1,10 @@
-import { BASE_URL } from '../../config/index.js';
+import { BASE_URL, HEADER } from '../../config/index.js';
 import axios from 'axios';
 import dotenv from 'dotenv';
 
 const ARTIST_INFO = 'artist';
 
 const options = { "User-Agent": "musicbrainz-api/1.0.0 ( zerovarius@gmail.com )" };
-
 
 dotenv.config();
 
@@ -15,7 +14,7 @@ const doRequest = async (mbid) => {
 
     console.log('full url is', fullurl);
 
-    return await axios.get(fullurl, options);
+    return await axios.get(fullurl, HEADER);
 
 };
 

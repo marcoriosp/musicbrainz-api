@@ -1,7 +1,7 @@
-import { infoArtist } from '../repositories/artistInfo.js';
+import { infoArtist } from '../repositories/artist.js';
 import status from 'http-status';
 
-export const artistInfo = async (req, res, next) => {
+export const artist = async (req, res, next) => {
     try {
         const { query } = req;
         
@@ -14,6 +14,7 @@ export const artistInfo = async (req, res, next) => {
     } catch (error) {
 
         next(error);
+        console.log("Error: " + err.message);
 
     }
     
