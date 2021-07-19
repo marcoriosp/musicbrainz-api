@@ -1,6 +1,5 @@
 FROM node:14
 
-
 LABEL maintainer = "Zerovarius <zerovarius@gmail.com>"
 
 # Create app directory

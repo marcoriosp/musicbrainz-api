@@ -1,15 +1,15 @@
-import { infoArtist } from '../repositories/artist.js';
+import { infoRelGrp } from '../repositories/relGroup.js';
 import status from 'http-status';
 
-export const artist = async (req, res, next) => {
+export const relGroup = async (req, res, next) => {
     try {
         const { query } = req;
         
-        const { data } = await infoArtist(query.mbid);
+        const { data } = await infoRelGrp(query.mbid);
         
-        const artist = data;
+        const relGroup = data;
 
-        const string = JSON.stringify(artist);
+        const string = JSON.stringify(relGroup);
 
         const Rs = JSON.parse(string);
 

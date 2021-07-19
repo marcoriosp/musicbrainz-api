@@ -1,15 +1,15 @@
-import { infoArtist } from '../repositories/artist.js';
+import { infoLabel } from '../repositories/label.js';
 import status from 'http-status';
 
-export const artist = async (req, res, next) => {
+export const label = async (req, res, next) => {
     try {
         const { query } = req;
         
-        const { data } = await infoArtist(query.mbid);
+        const { data } = await infoLabel(query.mbid);
         
-        const artist = data;
+        const label = data;
 
-        const string = JSON.stringify(artist);
+        const string = JSON.stringify(label);
 
         const Rs = JSON.parse(string);
 

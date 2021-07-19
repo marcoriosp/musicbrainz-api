@@ -1,17 +1,19 @@
-import { infoArtist } from '../repositories/artist.js';
+import { infoArea } from '../repositories/area.js';
 import status from 'http-status';
 
-export const artist = async (req, res, next) => {
+export const area = async (req, res, next) => {
     try {
         const { query } = req;
         
-        const { data } = await infoArtist(query.mbid);
+        const { data } = await infoArea(query.mbid);
         
-        const artist = data;
+        const area = data;
 
-        const string = JSON.stringify(artist);
+        const string = JSON.stringify(area);
 
         const Rs = JSON.parse(string);
+
+        //console.log(Rs.type);
 
         const response = {
             code: 1,
@@ -21,7 +23,6 @@ export const artist = async (req, res, next) => {
                 id: Rs.id, 
                 name: Rs.name,
                 sortName: Rs["sort-name"],
-                aliases: Rs.aliases,
                 type: Rs.type,
                 typeId: Rs["type-id"],
                 gender: Rs.gender,
@@ -30,9 +31,6 @@ export const artist = async (req, res, next) => {
                 country: Rs.country,
                 area: Rs.area,
                 genres: Rs.genres,
-                releases: Rs.releases,
-                releaseGroups: Rs["release-groups"],
-                recordings: Rs.recordings,
                 lifeSpan: Rs["life-span"],
                 tags: Rs.tags,
                 relations: Rs.relations,

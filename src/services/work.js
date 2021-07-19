@@ -1,15 +1,15 @@
-import { infoArtist } from '../repositories/artist.js';
+import { infoWork } from '../repositories/work.js';
 import status from 'http-status';
 
-export const artist = async (req, res, next) => {
+export const work = async (req, res, next) => {
     try {
         const { query } = req;
         
-        const { data } = await infoArtist(query.mbid);
+        const { data } = await infoWork(query.mbid);
         
-        const artist = data;
+        const work = data;
 
-        const string = JSON.stringify(artist);
+        const string = JSON.stringify(work);
 
         const Rs = JSON.parse(string);
 

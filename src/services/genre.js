@@ -1,15 +1,15 @@
-import { infoArtist } from '../repositories/artist.js';
+import { infoGenre } from '../repositories/genre.js';
 import status from 'http-status';
 
-export const artist = async (req, res, next) => {
+export const genre = async (req, res, next) => {
     try {
         const { query } = req;
         
-        const { data } = await infoArtist(query.mbid);
+        const { data } = await infoGenre(query.mbid);
         
-        const artist = data;
+        const genre = data;
 
-        const string = JSON.stringify(artist);
+        const string = JSON.stringify(genre);
 
         const Rs = JSON.parse(string);
 
