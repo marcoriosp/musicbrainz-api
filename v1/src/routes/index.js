@@ -27,6 +27,7 @@ import { workSearch } from '../services/search/work.js';
 import { urlLinkSearch } from '../services/search/urlLink.js';
 import { tagSearch } from '../services/search/tag.js';
 import { seriesSearch } from '../services/search/series.js';
+import { annotationSearch } from '../services/search/annotation.js';
 
 const routes = new Router();
 
@@ -57,6 +58,7 @@ routes.get('/search/work', workSearch);
 routes.get('/search/urlLink', urlLinkSearch);
 routes.get('/search/tag', tagSearch);
 routes.get('/search/series', seriesSearch);
+routes.get('/search/annotation', annotationSearch);
 
 
 export default routes;
