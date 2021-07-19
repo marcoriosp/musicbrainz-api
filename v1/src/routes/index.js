@@ -16,7 +16,7 @@ import { urlLink } from '../services/lookup/urlLink.js';
 import { artistSearch } from '../services/search/artist.js';
 import { areaSearch } from '../services/search/area.js';
 import { eventSearch } from '../services/search/event.js';
-import { genreSearch } from '../services/search/genre.js';
+import { cdstubSearch } from '../services/search/cdstub.js';
 import { instrumentSearch } from '../services/search/instrument.js';
 import { labelSearch } from '../services/search/label.js';
 import { placeSearch } from '../services/search/place.js';
@@ -25,6 +25,8 @@ import { releaseSearch } from '../services/search/release.js';
 import { relGroupSearch } from '../services/search/relGroup.js';
 import { workSearch } from '../services/search/work.js';
 import { urlLinkSearch } from '../services/search/urlLink.js';
+import { tagSearch } from '../services/search/tag.js';
+import { seriesSearch } from '../services/search/series.js';
 
 const routes = new Router();
 
@@ -44,7 +46,7 @@ routes.get('/urlLink', urlLink);
 routes.get('/search/artist', artistSearch);
 routes.get('/search/area', areaSearch);
 routes.get('/search/event', eventSearch);
-routes.get('/search/genre', genreSearch);
+routes.get('/search/cdstub', cdstubSearch);
 routes.get('/search/instrument', instrumentSearch);
 routes.get('/search/label', labelSearch);
 routes.get('/search/place', placeSearch);
@@ -53,6 +55,8 @@ routes.get('/search/release', releaseSearch);
 routes.get('/search/relGroup', relGroupSearch);
 routes.get('/search/work', workSearch);
 routes.get('/search/urlLink', urlLinkSearch);
+routes.get('/search/tag', tagSearch);
+routes.get('/search/series', seriesSearch);
 
 
 export default routes;

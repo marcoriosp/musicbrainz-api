@@ -1,5 +1,4 @@
 import routes from '../routes/index.js';
-//import errorHandler from '../utils/errorHandler.js';
 import express from 'express';
 import cors from 'cors';
 
@@ -18,6 +17,4 @@ export default (app) => {
     app.use('/', routes);
     app.use(notFoundErrorHandler);
     app.use(defaultErrorHandler);
-    //app.use(errorHandler.notFoundErrorHandler);
-    //app.use(errorHandler.defaultErrorHandler);
 };

@@ -3,7 +3,7 @@ import axios from 'axios';
 import dotenv from 'dotenv';
 import status from 'http-status';
 
-const SEARCH = 'genre';
+const SEARCH = 'tag';
 
 const inc = '';
 
@@ -19,17 +19,17 @@ const doRequest = async (query) => {
 
 };
 
-const searchGenre = async (term) => {
+const searchTag = async (term) => {
 
     return await doRequest(`${term}`);
 
 };
 
-export const genreSearch = async (req, res, next) => {
+export const tagSearch = async (req, res, next) => {
     try {
         const { query } = req;
         
-        const { data } = await searchGenre(query.query);
+        const { data } = await searchTag(query.query);
         
         const genre = data;
 
